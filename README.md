@@ -2,20 +2,29 @@
 
 > Compare two variables with the comparison operator specified as a string.
 
+(This is really [just a silly-simple switch-case](https://github.com/yuanqing/versus/blob/master/index.js) abstracted into a reusable module.)
+
 ## Usage
 
 ```js
-versus(1, '==',  2); //=> false
+versus(1, '==' , 2); //=> false
 versus(1, '===', 2); //=> false
-versus(1, '!=',  2); //=> true
+versus(1, '!=' , 2); //=> true
 versus(1, '!==', 2); //=> true
-versus(1, '<',   2); //=> true
-versus(1, '>',   2); //=> false
-versus(1, '<=',  2); //=> true
-versus(1, '>=',  2); //=> false
+versus(1, '<'  , 2); //=> true
+versus(1, '>'  , 2); //=> false
+versus(1, '<=' , 2); //=> true
+versus(1, '>=' , 2); //=> false
 ```
 
-This is [just a silly-simple switch case](https://github.com/yuanqing/versus/blob/master/index.js) abstracted into a reusable module.
+Versus uses [deep-equal](https://github.com/substack/node-deep-equal) for the `==` and `!=` comparisons. So we can do:
+
+```js
+versus({ foo: 1 }, '==', { foo: 1 }); //=> true
+versus({ foo: 1 }, '!=', { foo: 1 }); //=> false
+```
+
+Read [the tests](https://github.com/yuanqing/versus/blob/master/test/versus.spec.js).
 
 ## API
 
@@ -36,6 +45,8 @@ $ npm i --save versus
 
 ## Changelog
 
+- 0.2.0
+  - Use [deep-equal](https://github.com/substack/node-deep-equal) for `==` and `!=`
 - 0.1.0
   - Initial release
 
