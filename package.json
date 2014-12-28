@@ -1,0 +1,28 @@
+{
+  "name": "versus",
+  "version": "0.0.0",
+  "description": "Compare two variables with the comparison operator specified as a string.",
+  "author": "Lim Yuan Qing",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuanqing/versus.git"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.2",
+    "jshint": "^2.5.10",
+    "jshint-stylish": "^1.0.0",
+    "minijasminenode2": "^1.0.0"
+  },
+  "scripts": {
+    "lint": "node_modules/.bin/jshint --reporter=node_modules/jshint-stylish/stylish.js --verbose index.js test/*.spec.js",
+    "test": "rm -rf coverage && node_modules/.bin/istanbul cover -- node_modules/.bin/minijasminenode2 test/*.spec.js --verbose",
+    "build": "npm run lint && npm test"
+  },
+  "keywords": [
+    "compare",
+    "comparison",
+    "operator",
+    "string"
+  ]
+}
