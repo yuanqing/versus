@@ -1,6 +1,6 @@
 {
   "name": "versus",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Compare two variables with the comparison operator specified as a string.",
   "author": "Lim Yuan Qing",
   "license": "MIT",
